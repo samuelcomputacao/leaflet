@@ -37,6 +37,26 @@ app.get('/centroides',async (_, res) => {
 app.get('/limite_pb',async (_, res) => {
     const { rows } = await pg.get_limite_pb();
     res.json(JSON.stringify(rows));
+}),
+
+app.get('/mesorregioes',async (_, res) => {
+    const { rows } = await pg.get_mesorregioes();
+    res.json(JSON.stringify(rows));
+}),
+
+app.get('/microrregioes',async (_, res) => {
+    const { rows } = await pg.get_microrregioes();
+    res.json(JSON.stringify(rows));
+}),
+
+app.get('/ferrovias',async (_, res) => {
+    const { rows } = await pg.get_ferrovias();
+    res.json(JSON.stringify(rows));
+}),
+
+app.get('/rodovias',async (_, res) => {
+    const { rows } = await pg.get_rodovias();
+    res.json(JSON.stringify(rows));
 })
 
 app.listen(8000);
